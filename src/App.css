@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #3bc9db, #f3d32c);
+}
+.calculator-grid {
+  /* width: 600px; */
+  /* margin-top: 100px; */
+  box-shadow: 0 0 10px #b7b7b7;
+  padding: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(4, 5rem);
+  grid-template-rows: minmax(5rem, 7rem) repeat(7, 3rem);
+  gap: 0.3rem;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 1.5px #777777de;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.equal {
+  background: linear-gradient(45deg, #c6db3b, #f3d32c);
+}
+.output {
+  content: "hello";
+  grid-column: 1/-1;
+  text-align: right;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 10px #b7b7b7;
+  padding: 0.3rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.previousvalue {
+  font-size: 1.5rem;
+  color: #979797;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.currentvalue {
+  /* max-width: 98%; */
+  /* font-size: 45px; */
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  font-size: 2.5rem;
+  font-size: min(2.5rem, 6rem);
+  text-wrap: wrap;
+  word-break: break-all;
 }
